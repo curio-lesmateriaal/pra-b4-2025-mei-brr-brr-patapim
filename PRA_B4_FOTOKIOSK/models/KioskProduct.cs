@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRA_B4_FOTOKIOSK.magie;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace PRA_B4_FOTOKIOSK.models
     {
 
         public string Name { get; set; }
+        public double Price { get; set; }
 
     }
 }

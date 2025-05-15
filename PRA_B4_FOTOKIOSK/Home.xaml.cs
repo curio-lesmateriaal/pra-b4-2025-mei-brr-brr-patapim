@@ -75,5 +75,10 @@ namespace PRA_B4_FOTOKIOSK
         {
             SearchController.SearchButtonClick();
         }
+
+        private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
