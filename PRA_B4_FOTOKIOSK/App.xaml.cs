@@ -13,5 +13,6 @@ namespace PRA_B4_FOTOKIOSK
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
