@@ -25,7 +25,7 @@
             <TabItem Header="Kassa" Height="20" VerticalAlignment="Top">
                 <Grid>
                     <Label Content="Foto-id:" HorizontalAlignment="Left" Margin="100,192,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22" TextChanged="tbFotoId_TextChanged"/>
+                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
                     <Label Content="Product:" HorizontalAlignment="Left" Margin="100,258,0,0" VerticalAlignment="Top" Height="23" Width="255"/>
                     <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Margin="100,286,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="cbProducts_SelectionChanged"/>
                     <Label Content="Aantal:" HorizontalAlignment="Left" Margin="100,326,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
