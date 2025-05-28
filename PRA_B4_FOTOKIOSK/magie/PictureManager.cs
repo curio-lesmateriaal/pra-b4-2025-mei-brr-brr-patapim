@@ -33,12 +33,12 @@ namespace PRA_B4_FOTOKIOSK.magie
                 image.Height = 1080 / 3.5;
                 photoContainer.Children.Add(image);
 
-                // Haal de dag en tijd uit het pad en bestandsnaam
+                // Remove the day and time from the path and file name
                 string dayText = GetDayFromPath(picture.Source);
                 string timeText = GetTimeFromFileName(picture.Source);
                 string idText = GetIdFromFileName(picture.Source);
 
-                // Zwarte rechthoek om oude tekst te bedekken
+                // Black rectangle to cover old text
                 Rectangle coverRect = new Rectangle();
                 coverRect.Fill = System.Windows.Media.Brushes.Black;
                 coverRect.Width = 200;
@@ -48,7 +48,7 @@ namespace PRA_B4_FOTOKIOSK.magie
                 coverRect.Margin = new Thickness(5, 0, 0, 5);
                 photoContainer.Children.Add(coverRect);
 
-                // Nieuwe gele tekst met juiste dag, tijd en ID
+                // New yellow text with correct day, time and ID
                 TextBlock overlay = new TextBlock();
                 overlay.Text = $"{dayText} {timeText}\n{idText}";
                 overlay.FontSize = 24;
@@ -62,44 +62,45 @@ namespace PRA_B4_FOTOKIOSK.magie
             }
         }
 
-        // Methode om de dag uit het pad te halen
+        // Method to take the day out of the path
         private static string GetDayFromPath(string filePath)
         {
             string directoryName = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(filePath));
 
             if (directoryName.Contains("_"))
             {
-                return directoryName.Split('_')[1]; // Haalt "Zondag" uit "0_Zondag"
+                return directoryName.Split('_')[1]; 
             }
 
             return "Onbekend";
         }
 
-        // Nieuwe methode om tijd uit bestandsnaam te halen
+        // new method to extract time from file name
         private static string GetTimeFromFileName(string filePath)
         {
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            // Bestandsnaam format: 10_05_30_id8824
+            // Filename format: 10_05_30_id8824
             string[] parts = fileName.Split('_');
 
             if (parts.Length >= 3)
             {
-                return $"{parts[0]}:{parts[1]}:{parts[2]}"; // "10:05:30"
+                return $"{parts[0]}:{parts[1]}:{parts[2]}"; 
             }
 
             return "00:00:00";
         }
 
-        // Nieuwe methode om ID uit bestandsnaam te halen
+        // New method to extract ID from file name
         private static string GetIdFromFileName(string filePath)
         {
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            // Bestandsnaam format: 10_05_30_id8824
+            // Filename format: 10_05_30_id8824
             string[] parts = fileName.Split('_');
 
             if (parts.Length >= 4 && parts[3].StartsWith("id"))
             {
-                return parts[3].Substring(2); // Haalt "8824" uit "id8824"
+                // Extracts "8824" from "id8824"
+                return parts[3].Substring(2); 
             }
 
             return "0000";
