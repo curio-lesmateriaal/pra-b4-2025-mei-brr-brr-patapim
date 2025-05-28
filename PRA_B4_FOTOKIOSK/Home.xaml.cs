@@ -64,6 +64,7 @@ namespace PRA_B4_FOTOKIOSK
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
             PictureController.RefreshButtonClick();
+
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -80,5 +81,8 @@ namespace PRA_B4_FOTOKIOSK
         {
 
         }
+
+
+
     }
 }
