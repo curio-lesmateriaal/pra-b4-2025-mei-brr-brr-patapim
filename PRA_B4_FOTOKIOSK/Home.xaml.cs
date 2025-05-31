@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace PRA_B4_FOTOKIOSK
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
     public partial class Home : Window
     {
 
@@ -81,8 +78,6 @@ namespace PRA_B4_FOTOKIOSK
         {
 
         }
-
-
 
     }
 }
