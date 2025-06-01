@@ -48,10 +48,20 @@
             <TabItem Header="Zoeken">
                 <Grid>
                     <Label Content="Zoeken:" HorizontalAlignment="Left" Margin="100,53,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbZoeken" HorizontalAlignment="Left" Margin="100,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Button x:Name="btnZoeken" Content="Zoeken" HorizontalAlignment="Left" Margin="430,77,0,0" VerticalAlignment="Top" Width="83" Height="22" Click="btnZoeken_Click"/>
-                    <Image x:Name="imgBig" HorizontalAlignment="Left" Height="565" Margin="100,128,0,0" VerticalAlignment="Top" Width="1047"/>
-                    <Label x:Name="lbSearchInfo" Content="" HorizontalAlignment="Left" Margin="100,727,0,0" VerticalAlignment="Top" Height="251" Width="1091"/>
+                    <ComboBox x:Name="cbDag" Width="120" Height="22" Margin="100,95,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <ComboBoxItem Content="Zondag" Tag="0_Zondag"/>
+                        <ComboBoxItem Content="Maandag" Tag="1_Maandag"/>
+                        <ComboBoxItem Content="Dinsdag" Tag="2_Dinsdag"/>
+                        <ComboBoxItem Content="Woensdag" Tag="3_Woensdag"/>
+                        <ComboBoxItem Content="Donderdag" Tag="4_Donderdag"/>
+                        <ComboBoxItem Content="Vrijdag" Tag="5_Vrijdag"/>
+                        <ComboBoxItem Content="Zaterdag" Tag="6_Zaterdag"/>
+                    </ComboBox>
+
+                    <TextBox x:Name="tbZoeken" HorizontalAlignment="Left" Margin="100,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
+                    <Button x:Name="btnZoeken" Content="Zoeken" HorizontalAlignment="Left" Margin="430,122,0,0" VerticalAlignment="Top" Width="83" Height="22" Click="btnZoeken_Click"/>
+                    <Image x:Name="imgBig" HorizontalAlignment="Left" Height="564" Margin="100,166,0,0" VerticalAlignment="Top" Width="1047"/>
+                    <Label x:Name="lbSearchInfo" Content="" HorizontalAlignment="Left" Margin="100,745,0,0" VerticalAlignment="Top" Height="251" Width="1091"/>
                 </Grid>
             </TabItem>
             <!-- Tab item showing an overview of all photo products -->
