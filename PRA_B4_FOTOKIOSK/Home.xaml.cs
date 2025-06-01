@@ -30,6 +30,9 @@ namespace PRA_B4_FOTOKIOSK
             // Bouw de UI
             InitializeComponent();
 
+            ShopManager.Instance = this;
+            ShopManager.InitializeReceipt();
+
             // Stel de manager in
             PictureManager.Instance = this;
             ShopManager.Instance = this;
@@ -67,6 +70,11 @@ namespace PRA_B4_FOTOKIOSK
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             ShopController.SaveButtonClick();
+        }
+
+        private void btnShopTotal_Click(object sender, RoutedEventArgs e)
+        {
+            ShopController.Total();
         }
 
         private void btnZoeken_Click(object sender, RoutedEventArgs e)

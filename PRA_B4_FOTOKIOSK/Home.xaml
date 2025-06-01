@@ -25,19 +25,24 @@
             </TabItem>
             <TabItem Header="Kassa" Height="20" VerticalAlignment="Top">
                 <Grid>
-                    <Label Content="Foto-id:" HorizontalAlignment="Left" Margin="100,192,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Label Content="Product:" HorizontalAlignment="Left" Margin="100,258,0,0" VerticalAlignment="Top" Height="23" Width="255"/>
-                    <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Margin="100,286,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="cbProducts_SelectionChanged" RenderTransformOrigin="0.505,0.248"/>
-                    <Label Content="Aantal:" HorizontalAlignment="Left" Margin="100,326,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbAmount" HorizontalAlignment="Left" Margin="100,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Button x:Name="btnShopAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="100,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopAdd_Click"/>
-                    <Button x:Name="btnShopReset" Content="Resetten" HorizontalAlignment="Left" Margin="278,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopReset_Click"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="163*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Foto-id:" HorizontalAlignment="Left" Margin="100,141,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
+                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
+                    <Label Content="Product:" HorizontalAlignment="Left" Margin="100,207,0,0" VerticalAlignment="Top" Height="23" Width="255"/>
+                    <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Margin="100,235,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="cbProducts_SelectionChanged" RenderTransformOrigin="0.505,0.248"/>
+                    <Label Content="Aantal:" HorizontalAlignment="Left" Margin="100,275,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
+                    <TextBox x:Name="tbAmount" HorizontalAlignment="Left" Margin="100,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22" SelectionOpacity="0"/>
+                    <Button x:Name="btnShopAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="100,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopAdd_Click" Grid.RowSpan="2"/>
+                    <Button x:Name="btnShopTotaal" Content="Totaal" HorizontalAlignment="Left" Margin="588,396,0,0" VerticalAlignment="Top" Width="147" Click="btnShopTotal_Click" Grid.Row="1"/>
+                    <Button x:Name="btnShopReset" Content="Resetten" HorizontalAlignment="Left" Margin="278,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopReset_Click" Grid.RowSpan="2"/>
                     <Label x:Name="lbPrices" Content="" HorizontalAlignment="Left" Margin="899,-2,0,0" VerticalAlignment="Top" Height="272" Width="470"/>
-                    <Label x:Name="lbReceipt" Content="" HorizontalAlignment="Left" Margin="100,442,0,0" VerticalAlignment="Top" Height="392" Width="325"/>
-                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="10,998,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click"/>
-                    <Label x:Name="bonnetje" Content="Bonnetje:" HorizontalAlignment="Center" Margin="0,295,0,700" FontSize="24" Width="116" />
-                    <Label x:Name="lbBonneke" Content="" HorizontalAlignment="Left" Margin="899,349,0,0" VerticalAlignment="Top" Height="558" Width="469"/>
+                    <Label x:Name="lbReceipt" Content="" HorizontalAlignment="Left" Margin="100,58,0,0" VerticalAlignment="Top" Height="392" Width="325" Grid.Row="1"/>
+                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="10,614,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click" Grid.Row="1"/>
+                    <Label x:Name="bonnetje" Content="Bonnetje:" HorizontalAlignment="Center" Margin="0,295,0,48" FontSize="24" Width="116" />
+                    <Label x:Name="lbBonneke" Content="" HorizontalAlignment="Left" Margin="899,349,0,0" VerticalAlignment="Top" Height="558" Width="469" Grid.RowSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Zoeken">
