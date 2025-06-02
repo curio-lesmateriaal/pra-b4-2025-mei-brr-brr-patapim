@@ -16,9 +16,9 @@ namespace PRA_B4_FOTOKIOSK.controller
 {
     public class PictureController
     {
-        // We show the window on the screen
+        // Show the window on the screen
         public static Home Window { get; set; }
-        // De lijst met fotos die we laten zien
+        // The list of photos we show
         public List<KioskPhoto> PicturesToDisplay = new List<KioskPhoto>();
 
         // Start method called when the photo page opens.

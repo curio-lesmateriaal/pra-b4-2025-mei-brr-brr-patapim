@@ -28,28 +28,231 @@
             </TabItem>
             <TabItem Header="Kassa" Height="20" VerticalAlignment="Top">
                 <Grid>
-                    <Label Content="Foto-id:" HorizontalAlignment="Left" Margin="100,192,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Label Content="Product:" HorizontalAlignment="Left" Margin="100,258,0,0" VerticalAlignment="Top" Height="23" Width="255"/>
-                    <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Margin="100,286,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="cbProducts_SelectionChanged" RenderTransformOrigin="0.505,0.248"/>
-                    <Label Content="Aantal:" HorizontalAlignment="Left" Margin="100,326,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbAmount" HorizontalAlignment="Left" Margin="100,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Button x:Name="btnShopAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="100,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopAdd_Click"/>
-                    <Button x:Name="btnShopReset" Content="Resetten" HorizontalAlignment="Left" Margin="278,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopReset_Click"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="163*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Foto-id:" HorizontalAlignment="Left" Margin="100,141,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
+                    <TextBox x:Name="tbFotoId" HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
+                    <Label Content="Product:" HorizontalAlignment="Left" Margin="100,207,0,0" VerticalAlignment="Top" Height="23" Width="255"/>
+                    <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Margin="100,235,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="cbProducts_SelectionChanged" RenderTransformOrigin="0.505,0.248"/>
+                    <Label Content="Aantal:" HorizontalAlignment="Left" Margin="100,275,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
+                    <TextBox x:Name="tbAmount" HorizontalAlignment="Left" Margin="100,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22" SelectionOpacity="0"/>
+                    <Button x:Name="btnShopAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="100,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopAdd_Click" Grid.RowSpan="2"/>
+                    <Button x:Name="btnShopTotaal" Content="Totaal" HorizontalAlignment="Left" Margin="588,396,0,0" VerticalAlignment="Top" Width="147" Click="btnShopTotal_Click" Grid.Row="1"/>
+                    <Button x:Name="btnShopReset" Content="Resetten" HorizontalAlignment="Left" Margin="278,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopReset_Click" Grid.RowSpan="2"/>
                     <Label x:Name="lbPrices" Content="" HorizontalAlignment="Left" Margin="899,-2,0,0" VerticalAlignment="Top" Height="272" Width="470"/>
-                    <Label x:Name="lbReceipt" Content="" HorizontalAlignment="Left" Margin="100,442,0,0" VerticalAlignment="Top" Height="392" Width="325"/>
-                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="502,356,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click"/>
-                    <Label x:Name="bonnetje" Content="Bonnetje:" HorizontalAlignment="Center" Margin="0,295,0,700" FontSize="24" Width="116" />
-                    <Label x:Name="lbBonneke" Content="" HorizontalAlignment="Left" Margin="899,349,0,0" VerticalAlignment="Top" Height="558" Width="469"/>
+                    <Label x:Name="lbReceipt" Content="" HorizontalAlignment="Left" Margin="100,58,0,0" VerticalAlignment="Top" Height="392" Width="325" Grid.Row="1"/>
+                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="10,614,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click" Grid.Row="1"/>
+                    <Label x:Name="bonnetje" Content="Bonnetje:" HorizontalAlignment="Center" Margin="0,295,0,48" FontSize="24" Width="116" />
+                    <Label x:Name="lbBonneke" Content="" HorizontalAlignment="Left" Margin="899,349,0,0" VerticalAlignment="Top" Height="558" Width="469" Grid.RowSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Zoeken">
                 <Grid>
                     <Label Content="Zoeken:" HorizontalAlignment="Left" Margin="100,53,0,0" VerticalAlignment="Top" Height="24" Width="255"/>
-                    <TextBox x:Name="tbZoeken" HorizontalAlignment="Left" Margin="100,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
-                    <Button x:Name="btnZoeken" Content="Zoeken" HorizontalAlignment="Left" Margin="430,77,0,0" VerticalAlignment="Top" Width="83" Height="22" Click="btnZoeken_Click"/>
-                    <Image x:Name="imgBig" HorizontalAlignment="Left" Height="565" Margin="100,128,0,0" VerticalAlignment="Top" Width="1047"/>
-                    <Label x:Name="lbSearchInfo" Content="" HorizontalAlignment="Left" Margin="100,727,0,0" VerticalAlignment="Top" Height="251" Width="1091"/>
+                    <ComboBox x:Name="cbDag" Width="120" Height="22" Margin="100,95,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <ComboBoxItem Content="Zondag" Tag="0_Zondag"/>
+                        <ComboBoxItem Content="Maandag" Tag="1_Maandag"/>
+                        <ComboBoxItem Content="Dinsdag" Tag="2_Dinsdag"/>
+                        <ComboBoxItem Content="Woensdag" Tag="3_Woensdag"/>
+                        <ComboBoxItem Content="Donderdag" Tag="4_Donderdag"/>
+                        <ComboBoxItem Content="Vrijdag" Tag="5_Vrijdag"/>
+                        <ComboBoxItem Content="Zaterdag" Tag="6_Zaterdag"/>
+                    </ComboBox>
+
+                    <TextBox x:Name="tbZoeken" HorizontalAlignment="Left" Margin="100,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Height="22"/>
+                    <Button x:Name="btnZoeken" Content="Zoeken" HorizontalAlignment="Left" Margin="430,122,0,0" VerticalAlignment="Top" Width="83" Height="22" Click="btnZoeken_Click"/>
+                    <Image x:Name="imgBig" HorizontalAlignment="Left" Height="564" Margin="100,166,0,0" VerticalAlignment="Top" Width="1047"/>
+                    <Label x:Name="lbSearchInfo" Content="" HorizontalAlignment="Left" Margin="100,745,0,0" VerticalAlignment="Top" Height="251" Width="1091"/>
+                </Grid>
+            </TabItem>
+            <!-- Tab item showing an overview of all photo products -->
+            <TabItem Header="Overzicht">
+                <Grid>
+                    <!-- Main title label at the top center -->
+                    <Label Content="Overzicht van alle foto's"
+               HorizontalAlignment="Center"
+               Margin="0,20,0,0"
+               VerticalAlignment="Top"
+               FontSize="24"
+               FontWeight="Bold"/>
+
+                    <!-- Grid layout containing the photo product cards (3 columns x 2 rows) -->
+                    <Grid Margin="100,80,100,100">
+                        <!-- Define 3 equal-width columns -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Define 2 equal-height rows -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Photo 10x15 (2:3 aspect ratio) -->
+                        <Border Grid.Column="0" Grid.Row="0" Margin="10"
+                    HorizontalAlignment="Center"
+                    BorderBrush="Gray" BorderThickness="1"
+                    CornerRadius="5" Padding="10">
+                            <StackPanel>
+                                <!-- Placeholder rectangle with cross lines to simulate image -->
+                                <Rectangle Width="120" Height="180" Fill="LightGray">
+                                    <Rectangle.OpacityMask>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="Black">
+                                                    <GeometryDrawing.Geometry>
+                                                        <PathGeometry>
+                                                            <!-- Diagonal cross lines -->
+                                                            <PathFigure StartPoint="10,10">
+                                                                <LineSegment Point="110,170"/>
+                                                            </PathFigure>
+                                                            <PathFigure StartPoint="110,10">
+                                                                <LineSegment Point="10,170"/>
+                                                            </PathFigure>
+                                                        </PathGeometry>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <!-- Label for photo size and price -->
+                                <TextBlock Text="Foto 10x15" HorizontalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                                <TextBlock Text="€ 2,55" HorizontalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Photo 20x15 (4:3 aspect ratio) -->
+                        <Border Grid.Column="1" Grid.Row="0" Margin="15"
+                    HorizontalAlignment="Center"
+                    BorderBrush="Gray" BorderThickness="1"
+                    CornerRadius="5" Padding="15">
+                            <StackPanel>
+                                <!-- Placeholder image rectangle -->
+                                <Rectangle Width="160" Height="120" Fill="LightGray">
+                                    <Rectangle.OpacityMask>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="Black">
+                                                    <GeometryDrawing.Geometry>
+                                                        <PathGeometry>
+                                                            <PathFigure StartPoint="10,10">
+                                                                <LineSegment Point="150,110"/>
+                                                            </PathFigure>
+                                                            <PathFigure StartPoint="150,10">
+                                                                <LineSegment Point="10,110"/>
+                                                            </PathFigure>
+                                                        </PathGeometry>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <TextBlock Text="Foto 20x15" HorizontalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                                <TextBlock Text="€ 4,55" HorizontalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Photo 30x15 (2:1 aspect ratio) -->
+                        <Border Grid.Column="2" Grid.Row="0" Margin="20"
+                    HorizontalAlignment="Center"
+                    BorderBrush="DarkGray" BorderThickness="1"
+                    CornerRadius="5" Padding="20">
+                            <StackPanel>
+                                <Rectangle Width="180" Height="90" Fill="LightGray">
+                                    <Rectangle.OpacityMask>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="Black">
+                                                    <GeometryDrawing.Geometry>
+                                                        <PathGeometry>
+                                                            <PathFigure StartPoint="10,10">
+                                                                <LineSegment Point="170,80"/>
+                                                            </PathFigure>
+                                                            <PathFigure StartPoint="170,10">
+                                                                <LineSegment Point="10,80"/>
+                                                            </PathFigure>
+                                                        </PathGeometry>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <TextBlock Text="Foto 30x15" HorizontalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                                <TextBlock Text="€ 6,55" HorizontalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Photo 40x15 (8:3 aspect ratio) -->
+                        <Border Grid.Column="0" Grid.Row="1" Margin="25"
+                    HorizontalAlignment="Center"
+                    BorderBrush="Black" BorderThickness="1"
+                    CornerRadius="5" Padding="25">
+                            <StackPanel>
+                                <Rectangle Width="200" Height="75" Fill="LightGray">
+                                    <Rectangle.OpacityMask>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="Black">
+                                                    <GeometryDrawing.Geometry>
+                                                        <PathGeometry>
+                                                            <PathFigure StartPoint="10,10">
+                                                                <LineSegment Point="190,65"/>
+                                                            </PathFigure>
+                                                            <PathFigure StartPoint="190,10">
+                                                                <LineSegment Point="10,65"/>
+                                                            </PathFigure>
+                                                        </PathGeometry>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <TextBlock Text="Foto 40x15" HorizontalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                                <TextBlock Text="€ 8,55" HorizontalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Photo 50x20 (5:2 aspect ratio) -->
+                        <Border Grid.Column="1" Grid.Row="1" Margin="30"
+                    HorizontalAlignment="Center"
+                    BorderBrush="Black" BorderThickness="1"
+                    CornerRadius="8" Padding="30"
+                    Background="White">
+                            <StackPanel>
+                                <Rectangle Width="200" Height="80" Fill="LightGray">
+                                    <Rectangle.OpacityMask>
+                                        <DrawingBrush>
+                                            <DrawingBrush.Drawing>
+                                                <GeometryDrawing Brush="Black">
+                                                    <GeometryDrawing.Geometry>
+                                                        <PathGeometry>
+                                                            <PathFigure StartPoint="10,10">
+                                                                <LineSegment Point="190,70"/>
+                                                            </PathFigure>
+                                                            <PathFigure StartPoint="190,10">
+                                                                <LineSegment Point="10,70"/>
+                                                            </PathFigure>
+                                                        </PathGeometry>
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <TextBlock Text="Foto 50x20" HorizontalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="€ 10,55" HorizontalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>

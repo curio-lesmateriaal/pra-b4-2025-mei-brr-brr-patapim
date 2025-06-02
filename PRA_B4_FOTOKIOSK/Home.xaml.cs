@@ -18,12 +18,9 @@ using System.Windows.Shapes;
 
 namespace PRA_B4_FOTOKIOSK
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
     public partial class Home : Window
     {
-
+        private SearchManager zoekManager;
         public ShopController ShopController { get; set; }
         public PictureController PictureController { get; set; }
         public SearchController SearchController { get; set; }
@@ -32,6 +29,9 @@ namespace PRA_B4_FOTOKIOSK
         {
             // Bouw de UI
             InitializeComponent();
+
+            ShopManager.Instance = this;
+            ShopManager.InitializeReceipt();
 
             // Stel de manager in
             PictureManager.Instance = this;
@@ -49,6 +49,9 @@ namespace PRA_B4_FOTOKIOSK
             PictureController.Start();
             ShopController.Start();
             SearchController.Start();
+
+            string fotosPath = @"../../../fotos"; // <-- pas dit aan
+            zoekManager = new SearchManager(fotosPath);
         }
 
         private void btnShopAdd_Click(object sender, RoutedEventArgs e)
@@ -72,9 +75,9 @@ namespace PRA_B4_FOTOKIOSK
             ShopManager.SaveReceiptToFile();
         }
 
-        private void btnZoeken_Click(object sender, RoutedEventArgs e)
+        private void btnShopTotal_Click(object sender, RoutedEventArgs e)
         {
-            SearchController.SearchButtonClick();
+            ShopController.Total();
         }
 
         private void cbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,7 +85,50 @@ namespace PRA_B4_FOTOKIOSK
 
         }
 
+        private void btnZoeken_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbDag.SelectedItem == null)
+            {
+                lbSearchInfo.Content = "Selecteer eerst een dag.";
+                return;
+            }
 
+            string dagMap = ((ComboBoxItem)cbDag.SelectedItem).Tag.ToString();
+            string input = tbZoeken.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                lbSearchInfo.Content = "Voer een tijd of ID in.";
+                return;
+            }
+
+            var zoekManager = new SearchManager(@"../../../fotos");
+            string fotoPad = zoekManager.ZoekFoto(dagMap, input);
+
+            if (fotoPad != null)
+            {
+                ToonFoto(fotoPad);
+                lbSearchInfo.Content = $"Foto gevonden:";
+            }
+            else
+            {
+                lbSearchInfo.Content = "Geen foto gevonden.";
+                imgBig.Source = null;
+            }
+        }
+
+        private void ToonFoto(string pad)
+        {
+            string absoluutPad = System.IO.Path.GetFullPath(pad);
+
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(absoluutPad, UriKind.Absolute);
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+
+            imgBig.Source = bitmap;
+        }
 
     }
 }

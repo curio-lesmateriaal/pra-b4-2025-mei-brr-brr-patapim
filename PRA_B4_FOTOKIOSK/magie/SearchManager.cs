@@ -15,6 +15,12 @@ namespace PRA_B4_FOTOKIOSK.magie
     {
 
         public static Home Instance { get; set; }
+        private readonly string rootFolder;
+
+        public SearchManager(string folder)
+        {
+            rootFolder = Path.GetFullPath(folder);
+        }
 
         public static void SetPicture(string path)
         {
@@ -32,6 +38,7 @@ namespace PRA_B4_FOTOKIOSK.magie
 
             return img;
         }
+
 
         public static string GetSearchInput()
         {
@@ -51,6 +58,22 @@ namespace PRA_B4_FOTOKIOSK.magie
         public static void AddSearchImageInfo(string text)
         {
             SetSearchImageInfo(GetSearchImageInfo() + text);
+        }
+
+        public string ZoekFoto(string dagMap, string query)
+        {
+            string folderToSearch = Path.Combine(rootFolder, dagMap);
+            if (!Directory.Exists(folderToSearch))
+                return null;
+
+            foreach (var file in Directory.GetFiles(folderToSearch, "*.jpg"))
+            {
+                string naam = Path.GetFileNameWithoutExtension(file);
+                if (naam.Contains(query))
+                    return file;
+            }
+
+            return null;
         }
     }
 }
