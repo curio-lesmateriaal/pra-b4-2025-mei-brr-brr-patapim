@@ -69,7 +69,7 @@ namespace PRA_B4_FOTOKIOSK
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            ShopController.SaveButtonClick();
+            ShopManager.SaveReceiptToFile();
         }
 
         private void btnZoeken_Click(object sender, RoutedEventArgs e)

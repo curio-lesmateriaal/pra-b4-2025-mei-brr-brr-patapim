@@ -8,19 +8,22 @@
         Title="Home" Height="1080" Width="1920" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <TabControl x:Name="tabControl">
-            
+
             <TabItem Header="Foto's">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16*"/>
-                        <ColumnDefinition Width="7*"/>
-                        <ColumnDefinition Width="615*"/>
+                        <ColumnDefinition Width="48*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1845*"/>
                     </Grid.ColumnDefinitions>
-                    <ScrollViewer Margin="10,38,10,43" Grid.ColumnSpan="3">
+                    <ScrollViewer Margin="10,38,10,43" Grid.ColumnSpan="6">
                         <WrapPanel x:Name="spPictures">
                         </WrapPanel>
                     </ScrollViewer>
-                    <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="10,998,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnRefresh_Click" Grid.ColumnSpan="3"/>
+                    <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="10,998,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnRefresh_Click" Grid.ColumnSpan="6"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Kassa" Height="20" VerticalAlignment="Top">
@@ -35,7 +38,7 @@
                     <Button x:Name="btnShopReset" Content="Resetten" HorizontalAlignment="Left" Margin="278,383,0,0" VerticalAlignment="Top" Width="147" Click="btnShopReset_Click"/>
                     <Label x:Name="lbPrices" Content="" HorizontalAlignment="Left" Margin="899,-2,0,0" VerticalAlignment="Top" Height="272" Width="470"/>
                     <Label x:Name="lbReceipt" Content="" HorizontalAlignment="Left" Margin="100,442,0,0" VerticalAlignment="Top" Height="392" Width="325"/>
-                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="10,998,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click"/>
+                    <Button x:Name="btnSave" Content="Bon Opslaan" HorizontalAlignment="Left" Margin="502,356,0,0" VerticalAlignment="Top" Width="83" Height="28" Click="btnSave_Click"/>
                     <Label x:Name="bonnetje" Content="Bonnetje:" HorizontalAlignment="Center" Margin="0,295,0,700" FontSize="24" Width="116" />
                     <Label x:Name="lbBonneke" Content="" HorizontalAlignment="Left" Margin="899,349,0,0" VerticalAlignment="Top" Height="558" Width="469"/>
                 </Grid>

@@ -83,5 +83,54 @@ namespace PRA_B4_FOTOKIOSK.magie
             }
             return id;
         }
+        /// <summary>
+        /// Slaat de huidige bon op als tekstbestand op een door de gebruiker gekozen locatie
+        /// </summary>
+        /// <returns>True als het opslaan is gelukt, anders False</returns>
+        public static bool SaveReceiptToFile()
+        {
+            try
+            {
+                // Haal de huidige bon op
+                string receipt = GetShopReceipt();
+
+                if (string.IsNullOrEmpty(receipt))
+                {
+                    MessageBox.Show("Er is geen bon om op te slaan.", "Waarschuwing", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return false;
+                }
+
+                // Maak een SaveFileDialog aan om de gebruiker een locatie te laten kiezen
+                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog
+                {
+                    Filter = "Tekstbestanden (*.txt)|*.txt",
+                    Title = "Bon opslaan",
+                    FileName = "Bon_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") // Standaardnaam met datum en tijd
+                };
+
+                // Toon de SaveFileDialog
+                bool? result = saveFileDialog.ShowDialog();
+
+                // Als de gebruiker op Opslaan heeft geklikt
+                if (result == true)
+                {
+                    // Schrijf de bon naar het gekozen bestand
+                    File.WriteAllText(saveFileDialog.FileName, receipt);
+
+                    MessageBox.Show("Bon is succesvol opgeslagen naar: " + saveFileDialog.FileName,
+                        "Opgeslagen", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fout bij het opslaan van de bon: " + ex.Message,
+                    "Fout", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+        }
+
     }
 }
