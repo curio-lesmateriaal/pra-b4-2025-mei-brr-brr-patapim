@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\beppi\\Downloads\\fotokiosk\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\magie\\searchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:magie\\searchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\magie\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:magie\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\controller\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:controller\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|c:\\users\\beppi\\downloads\\fotokiosk\\magie\\picturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{202D8138-7232-434F-8C64-A2B782D1DB50}|PRA_B4_FOTOKIOSK.csproj|solutionrelative:magie\\picturemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\Home.xaml",
+              "RelativeDocumentMoniker": "Home.xaml",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\Home.xaml",
+              "RelativeToolTip": "Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-03T13:37:56.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\Home.xaml.cs",
+              "RelativeDocumentMoniker": "Home.xaml.cs",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\Home.xaml.cs",
+              "RelativeToolTip": "Home.xaml.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAgwJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:37:31.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PictureManager.cs",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\PictureManager.cs",
+              "RelativeDocumentMoniker": "magie\\PictureManager.cs",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\PictureManager.cs",
+              "RelativeToolTip": "magie\\PictureManager.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAgwFAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:37:21.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShopManager.cs",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\ShopManager.cs",
+              "RelativeDocumentMoniker": "magie\\ShopManager.cs",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\ShopManager.cs",
+              "RelativeToolTip": "magie\\ShopManager.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAqwIwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:37:15.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchManager.cs",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\SearchManager.cs",
+              "RelativeDocumentMoniker": "magie\\SearchManager.cs",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\magie\\SearchManager.cs",
+              "RelativeToolTip": "magie\\SearchManager.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwBEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:37:09.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SearchController.cs",
+              "DocumentMoniker": "C:\\Users\\beppi\\Downloads\\fotokiosk\\controller\\SearchController.cs",
+              "RelativeDocumentMoniker": "controller\\SearchController.cs",
+              "ToolTip": "C:\\Users\\beppi\\Downloads\\fotokiosk\\controller\\SearchController.cs",
+              "RelativeToolTip": "controller\\SearchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:35:09.97Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
